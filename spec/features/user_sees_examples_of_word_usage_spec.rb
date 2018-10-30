@@ -9,7 +9,9 @@ describe "user sees word examples" do
     # And I fill in a text box with "mindfulness"
     fill_in "q", with: "mindfulness"
     # And I click "Submit"
-    click_on "Submit"
+    VCR.use_cassette("user looks for examples") do
+      click_on "Submit"
+    end 
     # Then I should see a message that says "Examples for using 'mindfulness'"
     expect(page).to have_content("Examples for using 'mindfulness'")
     # And I should see a list of sentences with examples of how to use the word
