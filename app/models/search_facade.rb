@@ -17,8 +17,6 @@ class SearchFacade
     service.sentences
   end
 
-
-
   def service
     OxfordService.new(@word)
   end
