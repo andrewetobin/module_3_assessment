@@ -1,9 +1,11 @@
-<h1><%= "Examples for using '#{@search_facade.word}'" %></h1>
+<h2><%= "Examples for using '#{@search_facade.word}'" %></h2>
 
+<br />
 
 <% @search_facade.examples.each do |example| %>
     <div class="example">
-      <p> <%= example.sentence %> </p>
-      <p> <%= example.region %> </p>
+      <h4> <%= example.sentence %> </h4>
+      <h5>Region:  <%= example.region %> </h5>
+      <br />
     </div>
 <% end %>
