@@ -19,7 +19,8 @@ class SearchFacade
     results = JSON.parse(response.body, symbolize_names: true)[:results][0][:lexicalEntries][0][:sentences]
 
     results.each do |result|
-      @examples << Example.new((result:[:text]), (result[:regions].first)) if result[:regions].include?("British") || result[:regions].include?("Canadian")
+      @examples << Example.new((result[:text]), (result[:regions].first)) if result[:regions].include?("British") || result[:regions].include?("Canadian")
     end
+    @examples 
   end
 end
