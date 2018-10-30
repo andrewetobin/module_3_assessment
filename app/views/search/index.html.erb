@@ -1,0 +1,8 @@
+<h1><%= "Examples for using '#{@search_facade.word}'" %></h1>
+
+
+<% @search_facade.examples.each do |example| %>
+    <div class="example">
+      <p> <%= example %> </p>
+    </div>
+<% end %>
