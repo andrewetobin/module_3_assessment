@@ -12,9 +12,9 @@ class SearchFacade
       faraday.adapter  Faraday.default_adapter
     end
 
-    conn.get("api/v1/entries/en/#{@word}/sentences")
+    response = conn.get("api/v1/entries/en/#{@word}/sentences")
 
-    response = JSON.parse(response.body, symbolize_names: true)
+    results = JSON.parse(response.body, symbolize_names: true)[:results][0][:lexicalEntries][0][:sentences]
 require "pry"; binding.pry
   end
 end
