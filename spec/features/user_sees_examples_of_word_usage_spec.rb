@@ -11,13 +11,12 @@ describe "user sees word examples" do
     # And I click "Submit"
     VCR.use_cassette("user looks for examples") do
       click_on "Submit"
-    end 
+    end
     # Then I should see a message that says "Examples for using 'mindfulness'"
     expect(page).to have_content("Examples for using 'mindfulness'")
-    # And I should see a list of sentences with examples of how to use the word
+    save_and_open_page
+    expect(page).to have_css("example")
 
-    # And I should see only sentences where the region for usage is "Brittish" or "Canadian"
-    # And I should not see sentences for any other regions (or blank regions)
 
   end
 end

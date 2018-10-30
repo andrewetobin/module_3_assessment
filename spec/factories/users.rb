@@ -3,4 +3,3 @@ FactoryBot.define do
     name "Gob"
   end
 end
-

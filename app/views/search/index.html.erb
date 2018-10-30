@@ -3,6 +3,7 @@
 
 <% @search_facade.examples.each do |example| %>
     <div class="example">
-      <p> <%= example %> </p>
+      <p> <%= example.sentence %> </p>
+      <p> <%= example.region %> </p>
     </div>
 <% end %>
